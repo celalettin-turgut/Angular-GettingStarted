@@ -16,7 +16,7 @@ export class StarComponent implements OnInit, OnChanges {
   }
 
 ngOnInit(): void {
-    console.log('rating',this.rating)
+    
 }
 
 ngOnChanges(changes: SimpleChanges): void {

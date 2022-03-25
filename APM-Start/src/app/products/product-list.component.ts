@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Product } from '../interfaces/product';
+import { ImageService } from './image-service';
 //import data from '../../api/products/products.json';
 import { ProductService } from './product.service';
 @Component({
@@ -27,19 +28,21 @@ export class PrdouctListComponent implements OnInit, OnDestroy {
     );
   }
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private imageService: ImageService
+  ) {}
 
   ngOnInit() {
     this.sub = this.productService.getProducts().subscribe({
       next: (products) => (this.products = products),
       error: (err) => (this.errorMessage = err),
     });
-    console.log('products var mi',this.products);
-    console.log('filtered pro var mi',this.filteredProducts())
+    
   }
 
-  ngOnDestroy(){
-      this.sub.unsubscribe()
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
   onNotify(message: string) {

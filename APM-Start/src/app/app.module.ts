@@ -1,15 +1,22 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PrdouctListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-space.pipe';
 import { StarComponent } from './shared/star.component';
+import { ImagesComponent } from './images/images.component';
 
 @NgModule({
-  declarations: [AppComponent, PrdouctListComponent, ConvertToSpacesPipe,StarComponent],
+  declarations: [
+    AppComponent,
+    PrdouctListComponent,
+    ConvertToSpacesPipe,
+    StarComponent,
+    ImagesComponent,
+  ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   bootstrap: [AppComponent],
 })
